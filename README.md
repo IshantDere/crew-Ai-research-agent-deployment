@@ -13,7 +13,9 @@ FastAPI service for running a CrewAI research agent. The model is configured fro
 |   |-- __init__.py
 |   |-- database.py
 |   `-- models.py
-|-- main.py
+|-- api/
+|   |-- __init__.py
+|   `-- main.py
 |-- requirements.txt
 |-- Dockerfile
 |-- docker-compose.yml
@@ -36,6 +38,7 @@ MODEL_NAME=groq/llama-3.3-70b-versatile
 MODEL_MAX_TOKENS=1024
 GROQ_API_KEY=your_groq_api_key_here
 SERPER_API_KEY=your_serper_api_key_here
+GOOGLE_API_KEY=your_google_api_key_here
 ENABLE_SERPER_TOOL=false
 
 POSTGRES_DB=crewai
@@ -135,7 +138,7 @@ pip install -r requirements.txt
 Start FastAPI:
 
 ```bash
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 If you run the API outside Docker but Postgres inside Docker, use this local database URL:
