@@ -4,3 +4,5 @@ fastapi
 uvicorn[standard]
 python-dotenv
 litellm
+sqlalchemy
+psycopg2-binary
